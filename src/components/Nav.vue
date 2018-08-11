@@ -1,13 +1,12 @@
 <template lang="pug">
 .nav
+  Avatar(:image="user.icon")
 </template>
 <script>
+import Avatar from '@/components/Avatar'
 export default {
-  data () {
-    return {
-      user: {}
-    }
-  },
+  components: { Avatar },
+  props: ['user'],
   created () {
   }
 }
