@@ -28,13 +28,4 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.nav {
-  width: 250px;
-  float: left;
-  height: 100vh;
-}
-.content {
-  width: calc(100% - 300px);
-  float: left;
-}
 </style>

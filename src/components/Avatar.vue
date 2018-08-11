@@ -1,13 +1,13 @@
 <template lang="pug">
-img(:src="require(`@/assets/${image}`)")
+img(:src="require(`@/assets/${image}`)" :style="{ width, height }")
 </template>
 <script>
 export default {
   props: ['image', 'imageWidth', 'imageHeight'],
   data () {
     return {
-      width: 200,
-      height: 200
+      width: '100px',
+      height: '100px'
     }
   },
   created () {
@@ -24,7 +24,5 @@ export default {
 img {
   border-radius: 5px;
   box-shadow: 0 0 3px 0 #333;
-  width: 100px;
-  height: 100px;
 }
 </style>
