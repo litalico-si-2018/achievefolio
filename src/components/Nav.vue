@@ -1,11 +1,13 @@
 <template lang="pug">
-.mypage
-  Nav
+.nav
 </template>
 <script>
-import Nav from '@/components/Nav'
 export default {
-  components: { Nav },
+  data () {
+    return {
+      user: {}
+    }
+  },
   created () {
   }
 }
