@@ -1,7 +1,7 @@
 <template lang="pug">
 .achievement
   icon.icon(:name="typeToName[achievement.type]")
-  | {{ achievement.id }}
+  .achievement__description {{ achievement.secret ? '???' : achievement.description }}
 </template>
 <script>
 export default {
@@ -17,8 +17,28 @@ export default {
 </script>
 <style lang="scss" scoped>
 .achievement {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   background-color: #ccc;
+  position: relative;
+  cursor: pointer;
+  &__description {
+    position: absolute;
+    background-color: green;
+    top: 45px;
+    left: 30px;
+    padding: 10px;
+    z-index: 1;
+    display: none;
+    width: 200px;
+    font-size: 15px;
+    border-radius: 5px;
+    color: white;
+  }
+  &:hover {
+    .achievement__description {
+      display: inline-block;
+    }
+  }
 }
 </style>
