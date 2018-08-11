@@ -11,9 +11,12 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "node-sass": "^4.9.3",
     "pug": "^2.0.3",
     "pug-loader": "^2.4.0",
+    "sass-loader": "^7.1.0",
     "vue": "^2.5.2",
+    "vue-awesome": "^3.1.0",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {
