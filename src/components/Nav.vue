@@ -6,6 +6,9 @@
   .nav__menu(v-show="isGeneral")
     router-link.nav__item(to="/") マイページ
     router-link.nav__item(to="#") 設定
+  .nav__menu(v-show="!isGeneral")
+    router-link.nav__item(to="/users") ユーザー一覧
+    router-link.nav__item(to="#") 設定
 </template>
 <script>
 import Avatar from '@/components/Avatar'
