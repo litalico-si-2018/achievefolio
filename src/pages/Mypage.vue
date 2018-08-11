@@ -2,12 +2,14 @@
 .mypage
   Nav.nav(:user="user")
   .content
+    Calendar
 </template>
 <script>
 // import api from '@/utils/Api'
 import Nav from '@/components/Nav'
+import Calendar from '@/components/Calendar'
 export default {
-  components: { Nav },
+  components: { Nav, Calendar },
   data () {
     return {
       user: {},
