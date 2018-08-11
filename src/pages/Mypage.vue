@@ -29,7 +29,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .nav {
-  width: 300px;
+  width: 250px;
   float: left;
   height: 100vh;
 }
