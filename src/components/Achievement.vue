@@ -1,14 +1,15 @@
 <template lang="pug">
 .achievement
-  icon(:name="typeToName[type]")
+  icon.icon(:name="typeToName[achievement.type]")
+  | {{ achievement.id }}
 </template>
 <script>
 export default {
-  props: ['type'],
+  props: ['achievement'],
   data () {
     return {
-      "typeToName": {
-        string_count: "align-left"
+      typeToName: {
+        string_count: 'align-left'
       }
     }
   }
@@ -16,7 +17,8 @@ export default {
 </script>
 <style lang="scss" scoped>
 .achievement {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
+  background-color: #ccc;
 }
 </style>
