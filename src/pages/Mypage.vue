@@ -13,9 +13,10 @@ import Nav from '@/components/Nav'
 import Calendar from '@/components/Calendar'
 import AchievementBoard from '@/components/AchievementBoard'
 import PostForm from '@/components/PostForm'
+import Posts from '@/components/Posts'
 
 export default {
-  components: { Nav, Calendar, AchievementBoard, PostForm },
+  components: { Nav, Calendar, AchievementBoard, PostForm, Posts },
   data () {
     return {
       user: {},
