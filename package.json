@@ -11,6 +11,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "node-sass": "^4.9.3",
     "pug": "^2.0.3",
     "pug-loader": "^2.4.0",
