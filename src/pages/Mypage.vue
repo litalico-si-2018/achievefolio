@@ -1,5 +1,5 @@
 <template lang="pug">
-div
+.mypage
 </template>
 <script>
 export default {
