@@ -4,7 +4,7 @@
   .content
 </template>
 <script>
-import api from '@/utils/Api'
+// import api from '@/utils/Api'
 import Nav from '@/components/Nav'
 export default {
   components: { Nav },
