@@ -2,6 +2,8 @@
 .users
   Nav.nav(:user="user")
   .content
+    div.users__item(v-for="guser in users")
+      router-link(:to="{ name: 'User', params: { id: guser.id } }")
 </template>
 <script>
 import Nav from '@/components/Nav'
@@ -10,7 +12,14 @@ export default {
   data () {
     return {
       user: {},
-      users: []
+      users: [
+        {
+          id: 1,
+          name: '山田',
+          icon: 'yamada.jpg',
+          role: 'general'
+        }
+      ]
     }
   },
   created () {
