@@ -1,10 +1,28 @@
 <template lang="pug">
 .postForm
-  textarea.postForm__textarea(placeholder="今日学んだ新しいことは？")
-  button.postForm__button 送信
+  textarea.postForm__textarea(placeholder="今日学んだ新しいことは？" v-model="text")
+  button.postForm__button(@click="submit") 送信
 </template>
 <script>
+import api from '@/utils/Api'
 export default {
+  data () {
+    return {
+      text: ''
+    }
+  },
+  methods: {
+    submit () {
+      api('POST',
+        `${process.env.API_ENDPOINT}/posts`,
+        {
+          body: this.text
+        }
+      ).then(respones => {
+        // console.log(respones.data)
+      })
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>

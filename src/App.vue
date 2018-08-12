@@ -29,8 +29,10 @@ a {
   width: 250px;
   float: left;
   height: 100vh;
+  position: fixed;
 }
 .content {
+  margin-left: 300px;
   width: calc(100% - 300px);
   float: left;
   padding: 50px;

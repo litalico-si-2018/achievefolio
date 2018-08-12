@@ -2,7 +2,7 @@
 .mypage
   Nav.nav(:user="user")
   .content
-    Calendar.calendar
+    Calendar.calendar(:drops="drops")
     achievement-board.achievementBoard(:achievements="achievements")
     .posts
       post-form
@@ -31,6 +31,7 @@ export default {
       `${process.env.API_ENDPOINT}/pages/mypage`,
       {}
     ).then(response => {
+      console.log(response.data)
       this.user = response.data.user
       this.drops = response.data.drops
       this.achievements = response.data.achievements
@@ -61,8 +62,8 @@ export default {
 .posts {
   float: right;
   width: calc(100% - 150px);
-  height: 100px;
   padding: 20px;
   padding-top: 50px;
+  overflow: hidden;
 }
 </style>
