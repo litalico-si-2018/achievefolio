@@ -3,7 +3,10 @@
 </template>
 <script>
 export default {
-  props: ['posts']
+  props: ['posts'],
+  created () {
+    console.log(this.posts)
+  }
 }
 </script>
 <style lang="scss" scoped>

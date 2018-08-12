@@ -6,6 +6,7 @@
     achievement-board.achievementBoard(:achievements="achievements")
     .posts
       post-form
+      Posts(:posts="posts")
 </template>
 <script>
 // import api from '@/utils/Api'
