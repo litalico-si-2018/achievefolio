@@ -13,12 +13,6 @@ export default {
       weekCount: 41
     }
   },
-  created () {
-    this.existsWater(0, 0)
-    setTimeout(() => {
-      console.log(this.drops)
-    }, 100)
-  },
   methods: {
     calcDate (i, j) {
       const daysAgo = (this.weekCount - i + 1) * 7 - j
@@ -32,7 +26,7 @@ export default {
       const day = date.getDate()
       let exists = false
       this.drops.forEach(drop => {
-        if (month == drop.month && day == drop.date) {
+        if (month === drop.month && day === drop.date) {
           exists = true
         }
       })
