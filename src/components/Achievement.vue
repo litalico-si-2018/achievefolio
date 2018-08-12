@@ -1,15 +1,18 @@
 <template lang="pug">
-.achievement
-  icon.icon(:name="typeToName[achievement.type]")
+.achievement(:class="{ achieved: achieved }")
+  icon.icon(:name="typeToName[achievement.status]")
   .achievement__description {{ achievement.secret ? '???' : achievement.description }}
+  icon.achieved__icon(v-if="achievement.achieved || achieved" name="check")
 </template>
 <script>
 export default {
-  props: ['achievement'],
+  props: ['achievement', 'achieved'],
   data () {
     return {
       typeToName: {
-        string_count: 'align-left'
+        string_count: 'align-left',
+        sequence_post: 'grip-vertical',
+        daily_post_count: 'adjust'
       }
     }
   }
@@ -40,5 +43,15 @@ export default {
       display: inline-block;
     }
   }
+  &.achieved {
+    background-color: lightgreen;
+  }
+}
+.achieved__icon {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 5px;
+  left: 5px;
 }
 </style>

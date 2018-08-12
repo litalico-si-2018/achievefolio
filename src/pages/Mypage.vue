@@ -31,23 +31,10 @@ export default {
       `${process.env.API_ENDPOINT}/pages/mypage`,
       {}
     ).then(response => {
-      console.log(response.data)
       this.user = response.data.user
       this.drops = response.data.drops
       this.achievements = response.data.achievements
       this.posts = response.data.posts
-    })
-    this.achievements = Array.from(
-      new Array(36), (_, index) => index + 1
-    ).map(i => {
-      return {
-        id: i,
-        type: 'string_count',
-        achieved: false,
-        icon: '',
-        secret: false,
-        description: '文字数200文字以上の投稿をする'
-      }
     })
   }
 }

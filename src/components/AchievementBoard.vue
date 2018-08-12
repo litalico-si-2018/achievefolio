@@ -1,8 +1,8 @@
 <template lang="pug">
 .achievementBoard
   .achievementWrap
-    Achievement.achievement(v-for="achievement in leftAchievements"
-      :achievement="achievement" :key="achievement.id")
+    Achievement.achievement(v-for="(achievement, i) in leftAchievements"
+      :achievement="achievement" :key="achievement.id" :achieved="i < 3 || (4 < i && i <= 9)")
   .achievementWrap
     Achievement.achievement(v-for="achievement in middleAchievements"
       :achievement="achievement" :key="achievement.id")
@@ -22,10 +22,12 @@ export default {
       rightAchievements: []
     }
   },
-  created () {
-    this.leftAchievements = this.achievements.slice(0, 12)
-    this.middleAchievements = this.achievements.slice(12, 24)
-    this.rightAchievements = this.achievements.slice(24, 36)
+  mounted () {
+    setTimeout(() => {
+      this.leftAchievements = this.achievements.slice(0, 12)
+      this.middleAchievements = this.achievements.slice(12, 24)
+      this.rightAchievements = this.achievements.slice(24, 36)
+    }, 400)
   }
 }
 </script>

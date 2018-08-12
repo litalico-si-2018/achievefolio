@@ -1,18 +1,29 @@
 <template lang="pug">
 .posts
-  .posts__item(v-for="post in posts" :key="post.id" :class="{ approved: true }")
+  .posts__item(v-for="(post, i) in posts" :key="post.id" :class="{ approved: post.approved }")
     Avatar.avatar(image="yamada.jpg" imageWidth="50px" imageHeight="50px")
     p.body {{ post.body }}
+    icon.icon(@click.native="approve(i)" name="check" v-show="!post.approved")
 </template>
 <script>
 import Avatar from '@/components/Avatar'
+import api from '@/utils/Api'
 
 export default {
   components: { Avatar },
-  props: ['posts'],
+  props: ['posts', 'admin'],
   created () {
   },
   methods: {
+    approve (i) {
+      if (window.confirm('この投稿を承認しますか？')) {
+        api('PATCH',
+          `${process.env.API_ENDPOINT}/approved`,
+          { post_id: this.posts[i].id }
+        ).then(response => {
+        })
+      }
+    }
   }
 }
 </script>
@@ -29,6 +40,7 @@ export default {
     border: 1px solid #ccc;
     overflow: hidden;
     margin: 10px 0;
+    position: relative;
   }
 }
 .avatar {
@@ -41,5 +53,14 @@ export default {
 }
 .approved {
   background-color: #09d3ff;
+}
+.icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  color: lightgreen;
+  width: 30px;
+  height: 30px;
 }
 </style>
