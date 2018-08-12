@@ -27,7 +27,7 @@ export default {
       this.leftAchievements = this.achievements.slice(0, 12)
       this.middleAchievements = this.achievements.slice(12, 24)
       this.rightAchievements = this.achievements.slice(24, 36)
-    }, 400)
+    }, 1000)
   }
 }
 </script>
