@@ -15,9 +15,9 @@ export default {
   created () {
     this.user = {
       id: 1,
-      name: '山田',
-      icon: 'yamada.jpg',
-      role: 'general'
+      name: '山本',
+      icon: 'yamamoto.jpg',
+      role: 'admin'
     }
   }
 }

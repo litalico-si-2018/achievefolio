@@ -15,7 +15,12 @@ export default {
   components: { Nav, Avatar },
   data () {
     return {
-      user: {},
+      user: {
+        id: 2,
+        name: '山本',
+        icon: 'yamamoto.jpg',
+        role: 'admin'
+      },
       users: [
         {
           id: 1,
@@ -24,15 +29,6 @@ export default {
           role: 'general'
         }
       ]
-    }
-  },
-  created () {
-    // api(`${process.env.API_ENDPOINT}/pages/mypage`)
-    this.user = {
-      id: 1,
-      name: '山田',
-      icon: 'yamada.jpg',
-      role: 'general'
     }
   }
 }

@@ -31,7 +31,6 @@ export default {
       `${process.env.API_ENDPOINT}/pages/mypage`,
       {}
     ).then(response => {
-      console.log(response.data)
       this.user = response.data.user
       this.drops = response.data.drops
       this.achievements = response.data.achievements

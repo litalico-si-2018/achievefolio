@@ -21,6 +21,7 @@ export default {
     }
   },
   created () {
+    console.log(this.user)
     if (this.user.role === 'admin') {
       this.isGeneral = false
     }
