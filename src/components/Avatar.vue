@@ -1,5 +1,5 @@
 <template lang="pug">
-img(:src="require(`@/assets/${image}`)" :style="{ width, height }")
+img(v-if="image" :src="require(`@/assets/${image}`)" :style="{ width, height }")
 </template>
 <script>
 export default {
