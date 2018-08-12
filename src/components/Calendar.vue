@@ -57,7 +57,7 @@ export default {
   cursor: pointer;
   &__description {
     position: absolute;
-    background-color: blue;
+    background-color: #37619c;
     top: 15px;
     left: 10px;
     padding: 10px;

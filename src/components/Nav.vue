@@ -30,7 +30,7 @@ export default {
 <style lang="scss" scoped>
 .nav {
   color: white;
-  background-color: #333;
+  background-color: #444;
   text-align: center;
   &__avatar {
     margin-bottom: 10px;

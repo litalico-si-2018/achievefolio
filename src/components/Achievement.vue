@@ -24,7 +24,7 @@ export default {
   cursor: pointer;
   &__description {
     position: absolute;
-    background-color: green;
+    background-color: #37619c;
     top: 45px;
     left: 30px;
     padding: 10px;
