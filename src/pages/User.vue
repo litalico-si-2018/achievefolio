@@ -31,7 +31,7 @@ export default {
     ).then(response => {
       this.drops = response.data.drops
       this.achievements = response.data.achievements
-      this.posts = response.data.posts
+      this.posts = response.data.posts.reverse()
     })
     this.user = {
       id: 2,

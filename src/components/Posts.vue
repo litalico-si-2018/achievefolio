@@ -3,7 +3,8 @@
   .posts__item(v-for="(post, i) in posts" :key="post.id" :class="{ approved: post.approved }")
     Avatar.avatar(image="yamada.jpg" imageWidth="50px" imageHeight="50px")
     p.body {{ post.body }}
-    icon.icon(@click.native="approve(i)" name="check" v-show="!post.approved")
+    icon.icon(@click.native="approve(i)" name="check" v-show="admin && !post.approved")
+    p.date {{ `${post.year}-${post.month}-${post.date}` }}
 </template>
 <script>
 import Avatar from '@/components/Avatar'

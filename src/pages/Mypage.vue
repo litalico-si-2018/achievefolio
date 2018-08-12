@@ -35,6 +35,7 @@ export default {
       this.drops = response.data.drops
       this.achievements = response.data.achievements
       this.posts = response.data.posts
+      this.posts = this.posts.reverse()
     })
   }
 }
