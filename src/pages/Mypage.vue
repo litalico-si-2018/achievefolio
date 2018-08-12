@@ -9,7 +9,7 @@
       Posts(:posts="posts")
 </template>
 <script>
-// import api from '@/utils/Api'
+import api from '@/utils/Api'
 import Nav from '@/components/Nav'
 import Calendar from '@/components/Calendar'
 import AchievementBoard from '@/components/AchievementBoard'
@@ -27,13 +27,16 @@ export default {
     }
   },
   created () {
-    // api(`${process.env.API_ENDPOINT}/pages/mypage`)
-    this.user = {
-      id: 1,
-      name: '山田',
-      icon: 'yamada.jpg',
-      role: 'general'
-    }
+    api('GET',
+      `${process.env.API_ENDPOINT}/pages/mypage`,
+      {}
+    ).then(response => {
+      console.log(response.data)
+      this.user = response.data.user
+      this.drops = response.data.drops
+      this.achievements = response.data.achievements
+      this.posts = response.data.posts
+    })
     this.achievements = Array.from(
       new Array(36), (_, index) => index + 1
     ).map(i => {
@@ -46,30 +49,6 @@ export default {
         description: '文字数200文字以上の投稿をする'
       }
     })
-    this.posts = [
-      {
-        id: 1,
-        comments: [
-          {
-            id: 1,
-            type: 'post_content',
-            body: '頑張った！'
-          },
-          {
-            id: 2,
-            type: 'comment',
-            body: '何を頑張ったの？'
-          },
-          {
-            id: 3,
-            type: 'comment',
-            body: 'データ入力をミスなく完璧に頑張った！'
-          }
-        ],
-        approved: false,
-        mine: true
-      }
-    ]
   }
 }
 </script>
